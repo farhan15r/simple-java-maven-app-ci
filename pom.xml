@@ -55,25 +55,16 @@
               <mainClass>com.mycompany.app.App</mainClass>
             </manifest>
           </archive>
-          <configuration>
-            <archive>
-              <manifest>
-                <addClasspath>true</addClasspath>
-                <classpathPrefix>lib/</classpathPrefix>
-                <mainClass>com.mycompany.app.App</mainClass>
-              </manifest>
-            </archive>
-          </configuration>
-          <executions>
-            <execution>
-              <id>package-jar</id>
-              <phase>package</phase>
-              <goals>
-                <goal>jar</goal>
-              </goals>
-            </execution>
-          </executions>
         </configuration>
+        <executions>
+          <execution>
+            <id>package-jar</id>
+            <phase>package</phase>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
         <dependencies>
           <dependency>
             <groupId>org.springframework.boot</groupId>
