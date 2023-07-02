@@ -31,5 +31,5 @@ set +x
 
 echo 'Kill after 1 minute'
 sleep 60
-kill -9 $(lsof -t -i:3000)
+kill -9 $(netstat -tlnp | awk '/:3000 */ {split($NF, a, "/"); print a[1]}')
 echo 'Killed'
