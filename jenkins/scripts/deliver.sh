@@ -29,7 +29,9 @@ set -x
 java -jar target/${NAME}-${VERSION}.jar &
 set +x
 
+PID=$(pgrep -f "${NAME}-${VERSION}.jar")
+
 echo 'Kill after 1 minute'
 sleep 60
-kill -9 $(netstat -tlnp | awk '/:3000 */ {split($NF, a, "/"); print a[1]}')
+kill -9 $PID
 echo 'Killed'
