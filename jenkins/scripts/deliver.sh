@@ -26,4 +26,5 @@ set -x
 
 # java -jar target/${NAME}-${VERSION}.jar
 # run in background
-java -jar target/${NAME}-${VERSION}.jar
+java -jar target/${NAME}-${VERSION}.jar &
+set +x
