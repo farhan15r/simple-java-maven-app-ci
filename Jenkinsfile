@@ -24,10 +24,15 @@ pipeline {
                 }
             }
         }
+
+        stage('Manual Approval'){
+            steps {
+                input message: 'Terima Delivery untuk di Deploy? (Klik "Proceed" untuk terima)'
+            }
+        }
         
         stage('Deploy') {
             steps {
-                input message: 'Terima Delivery untuk di Deploy? (Klik "Proceed" untuk terima)'
                 sh './jenkins/scripts/deliver.sh'
             }
         }
