@@ -26,12 +26,4 @@ set -x
 
 # java -jar target/${NAME}-${VERSION}.jar
 # run in background
-java -jar target/${NAME}-${VERSION}.jar &
-set +x
-
-PID=$(pgrep -f "${NAME}-${VERSION}.jar")
-
-echo 'Kill after 1 minute'
-sleep 60
-kill -9 $PID
-echo 'Killed'
+java -jar target/${NAME}-${VERSION}.jar
